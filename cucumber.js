@@ -1,6 +1,6 @@
 var common = [
   '--compiler js:babel-register',
-  '--format progress',
+  '--format instant-fail',
   '--format rerun:@rerun.txt',
   '--format usage:usage.txt'
 ].join(' ')

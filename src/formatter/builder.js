@@ -1,5 +1,6 @@
 import _ from 'lodash'
 import getColorFns from './get_color_fns'
+import InstantFailFormatter from './instant_fail_formatter'
 import JavascriptSnippetSyntax from './step_definition_snippet_builder/javascript_snippet_syntax'
 import JsonFormatter from './json_formatter'
 import path from 'path'
@@ -32,6 +33,7 @@ export default class FormatterBuilder {
       case 'summary': return SummaryFormatter
       case 'usage': return UsageFormatter
       case 'usage-json': return UsageJsonFormatter
+      case 'instant-fail': return InstantFailFormatter
       default: return FormatterBuilder.loadCustomFormatter(type, options)
     }
   }
