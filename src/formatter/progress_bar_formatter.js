@@ -12,7 +12,8 @@ const statusToReport = [
   Status.UNDEFINED
 ]
 
-export default class InstantFailFormatter extends SummaryFormatter {
+// Inspired by https://github.com/thekompanee/fuubar and https://github.com/martinciu/fuubar-cucumber
+export default class ProgressBarFormatter extends SummaryFormatter {
   constructor(options) {
     super(options)
     this.issueCount = 0
