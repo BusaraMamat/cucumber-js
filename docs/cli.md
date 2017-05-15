@@ -51,10 +51,10 @@ If PATH is supplied, it prints to the given file.
 If multiple formats are specified with the same output, only the last is used.
 
 Built-in formatters
-* instant-fail - prints a progress bar and outputs errors/warnings along the way
 * json - prints the feature as JSON
 * pretty - prints the feature as is (default)
 * progress - prints one character per scenario
+* progress-bar - prints a progress bar and outputs errors/warnings along the way
 * rerun - prints the paths of any non passing scenarios ([example](/features/rerun_formatter.feature))
   * suggested use: add the rerun formatter to your default profile and the output file to your `.gitignore`. Use with `--fail-fast` to rerun the failure and the remaining features.
 * snippets - prints just the code snippets for undefined steps
