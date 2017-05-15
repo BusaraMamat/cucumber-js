@@ -18,4 +18,4 @@ The base `Formatter` does very little aside from saving some of the options on t
 
 `formatterHelpers` are also exposed to give some of the functionality in more modular pieces.
 
-If there is any formatter functionality you would like access to but don't necessarily want to extend from, please create an [issue](https://github.com/cucumber/cucumber-js).
+If there is any other formatter functionality you would like access to, please create an [issue](https://github.com/cucumber/cucumber-js).
