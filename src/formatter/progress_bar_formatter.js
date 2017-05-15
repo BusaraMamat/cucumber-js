@@ -2,7 +2,7 @@ import _ from 'lodash'
 import {formatIssue, formatSummary} from './helpers'
 import Hook from '../models/hook'
 import Status from '../status'
-import SummaryFormatter from './summary_formatter'
+import Formatter from './'
 import ProgressBar from 'progress'
 
 const statusToReport = [
@@ -13,7 +13,7 @@ const statusToReport = [
 ]
 
 // Inspired by https://github.com/thekompanee/fuubar and https://github.com/martinciu/fuubar-cucumber
-export default class ProgressBarFormatter extends SummaryFormatter {
+export default class ProgressBarFormatter extends Formatter {
   constructor(options) {
     super(options)
     this.issueCount = 0
@@ -35,7 +35,7 @@ export default class ProgressBarFormatter extends SummaryFormatter {
   }
 
   handleStepResult(stepResult) {
-    if (!(stepResult instanceof Hook)) {
+    if (!(stepResult.step instanceof Hook)) {
       this.progressBar.tick()
     }
     if (_.includes(statusToReport, stepResult.status)) {
@@ -51,7 +51,6 @@ export default class ProgressBarFormatter extends SummaryFormatter {
   }
 
   handleFeaturesResult(featuresResult) {
-    this.progressBar.terminate()
     this.log(formatSummary({
       colorFns: this.colorFns,
       featuresResult
